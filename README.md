@@ -1,2 +1,3 @@
 # fat
-a tool for FE
+
+一个前端开发工具
