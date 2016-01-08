@@ -3,16 +3,14 @@
 const program = require('commander');
 const pkg = require('../package.json');
 
-program
-  .version(pkg.version)
-  .option('-p, --port', 'set moniter port');
+program.version(pkg.version, '-v, --version');
 
 // 全局帮助  
 program.on('--help', function(){
   console.log('  Examples:');
   console.log('');
   console.log('    $ fat -h');
-  console.log('    $ fat init');
+  console.log('    $ fat init [type]');
   console.log('    $ fat server');
   console.log('    $ fat build');
   console.log('    $ fat push');
@@ -33,18 +31,14 @@ program.command('init [type]')
     });
 
 // 启动本地服务
-program.command('server')
+program.command('server [type]')
     .description('启动本地开发服务器')
-    .usage('[options]')
-    .option('-dj', '启动django服务')
-    .option('-hd', '启动handlebar服务')
-    .action(function(options) {
-        console.log('start django');
+    .action(function(type) {
+      require('../lib/server.js').start(type);
     }).on('--help', function() {
         console.log('  Examples:');
         console.log();
-        console.log('    $ fat server -dj');
-        console.log('    $ fat server -hd');
+        console.log('    $ fat server [type]');
         console.log();
     });
 
@@ -61,9 +55,6 @@ program.command('push')
     .action(function(options) {
 
     });
-
-
-
 
  
 program.parse(process.argv);
