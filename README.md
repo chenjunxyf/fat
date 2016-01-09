@@ -8,3 +8,7 @@
 * koa、co-views、koa-router
 * commander
 * django模板渲染工具包
+
+## 想法
+
+* 自动拉取插件
