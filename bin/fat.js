@@ -31,14 +31,14 @@ program.command('init [type]')
     });
 
 // 启动本地服务
-program.command('server [type]')
+program.command('server')
     .description('启动本地开发服务器')
-    .action(function(type) {
-      require('../lib/server.js').start(type);
+    .action(function() {
+      require('../lib/server.js').start();
     }).on('--help', function() {
         console.log('  Examples:');
         console.log();
-        console.log('    $ fat server [type]');
+        console.log('    $ fat server');
         console.log();
     });
 

@@ -1,5 +1,5 @@
-moudle.exports = {
-    port: 80,
+module.exports = {
+    port: 8001,
     proxy: [
         {
             name: '推荐页',
