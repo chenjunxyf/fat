@@ -4,8 +4,6 @@ const program = require('commander');
 const pkg = require('../package.json');
 const util = require('../lib/util');
 
-var config = util.getLocalConf();
-
 program.version(pkg.version, '-v, --version');
 
 // 全局帮助  
@@ -37,6 +35,10 @@ program.command('init [type]')
 program.command('server')
     .description('启动本地开发服务器')
     .action(function() {
+      var config = util.getLocalConf();
+
+      if (config === false) return;
+
       if (config.build.on) {
         require('../lib/fis3.js').build();
       }
