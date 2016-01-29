@@ -4,7 +4,7 @@ module.exports = {
         {
             name: '推荐页',
             rule: /\/ttdiscuss\/v1\/brow\/feed\//,
-            target: '/page/index/recommend.html'
+            target: '/page/main.html'
         },
         {
             name: '关注页',
