@@ -34,6 +34,7 @@ program.command('init [type]')
 program.command('server')
     .description('启动本地开发服务器')
     .action(function() {
+      require('../lib/fis3.js').build();
       require('../lib/server.js').start();
     }).on('--help', function() {
         console.log('  Examples:');
@@ -45,8 +46,8 @@ program.command('server')
 // 项目构建
 program.command('build')
     .description('本地构建')
-    .action(function(options) {
-
+    .action(function() {
+      require('../lib/fis3.js').build();
     });
 
 // 代码合并前审查
