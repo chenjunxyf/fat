@@ -1,5 +1,9 @@
 moudle.exports = {
     port: 8001,
+    build: {
+        on: true,
+        tool: 'fis3b'
+    },
     proxy: [
         {
             name: '推荐页',
