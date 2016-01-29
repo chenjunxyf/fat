@@ -1,6 +1,6 @@
 {
   "name": "fat-byte",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a tool for fe",
   "main": "index.js",
   "bin": {
@@ -34,6 +34,7 @@
     "less": "^2.5.3",
     "lodash": "^3.10.1",
     "moment": "^2.11.0",
+    "open": "0.0.5",
     "thunkify": "^2.1.2"
   }
 }

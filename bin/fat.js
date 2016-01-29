@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const program = require('commander');
+const open = require('open');
 const pkg = require('../package.json');
 const util = require('../lib/util');
 
@@ -42,7 +43,11 @@ program.command('server')
       if (config.build.on) {
         require('../lib/fis3.js').build();
       }
+
       require('../lib/server.js').start();
+
+      open('http://localhost:' + config.port);
+
     }).on('--help', function() {
         console.log('  Examples:');
         console.log();
