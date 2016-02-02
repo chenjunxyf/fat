@@ -8,7 +8,7 @@
 * koa、co-views
 * commander
 * 定制化的fis3：[fis3-wrapper-common](https://github.com/guananddu/fis3-wrapper-common)
-* [django模板渲染工具包](https://github.com/yanni4night/django)
+* django模板渲染包：[django模板渲染工具包](https://github.com/yanni4night/django)
 
 ## 功能
 
@@ -20,7 +20,7 @@
 
 ## 安装
 
-**包安装**
+**fat包安装**
 
 ```npm install fat-byte -g```
 
@@ -45,3 +45,32 @@
 **启动本地服务器并且利用fis3构建，自动打开浏览器**
 
 ```fat server```
+
+## 配置文件`fat-config.js`说明
+
+```javascript
+moudle.exports = {
+    port: 8001,       // 本地服务端口
+    build: {
+        on: true,     // 是否需要构建
+        tool: 'fis3b' // 工具类型，默认：fis3
+    },
+    proxy: [
+        {
+            name: '推荐页',
+            rule: /\/ttdiscuss\/v1\/brow\/feed\//,  // 线上请求路径
+            target: '/page/index/recommend.html'    // 本地模板路径
+        },
+        {
+            name: '关注页',
+            rule: /\/ttdiscuss\/v1\/brow\/find\//,
+            target: '/page/index/surround.html'   
+        }
+    ]
+}
+
+```
+
+
+
+
