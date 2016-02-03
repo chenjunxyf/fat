@@ -1,4 +1,6 @@
 $(function() {
+    var $ajaxData = $('.ajax_data');
+
     $('.ajax_btn').on('click', function() {
         $.ajax({
             url: '/ttdiscuss/concern/more/',
@@ -6,6 +8,7 @@ $(function() {
             data: {},
             success: function(data) {
                 console.log(data.students);
+                $ajaxData.append('<div>' + data.teacher + '</div>');
             },
             error: function() {
 

@@ -1,16 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-    <title>index</title>
-    <link rel="stylesheet" href="/static/css/index.less">
-</head>
-<body>
-    <p class="box">
-        <span class="text">哈哈</span>
-    </p>
+{% extends 'page/common/base.html' %}
 
-    <script src="/static/js/index.js"></script>
-</body>
-</html>
+{% block title %}{{title}}{% endblock %} 
+
+{% block link %}
+<link rel="stylesheet" href="/static/css/index.less">
+{% endblock %} 
+
+{% block content %}
+<div class="header">django tt toutiao</div>
+
+<div class="wrapper">
+    <img src="/static/image/logo.jpg" alt="">
+</div>
+
+<div class="ajax_btn">ajax模拟测试</div>
+<div class="ajax_data"></div>
+{% endblock %}
+
+{% block script %}
+<script src="/static/js/lib/zepto.js"></script>
+<script src="/static/js/index.js"></script>
+{% endblock %}
+
