@@ -49,6 +49,7 @@
 **构建工具输出格式快速查看**
 
 ```fat build local -d ./build```(本地模式)
+
 ```fat build online -d ./build```(线上模式)
 
 
