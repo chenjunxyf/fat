@@ -41,12 +41,14 @@ program.command('server')
       if (config === false) return;
 
       if (config.build.on) {
-        require('../lib/fis3.js').build();
+        require('../lib/fis3.js').build('local', './build', true);
       }
 
       require('../lib/server.js').start();
 
-      open('http://localhost:' + config.port);
+      setTimeout(function() {
+        open('http://localhost:' + config.port);
+      }, 5000);
 
     }).on('--help', function() {
         console.log('  Examples:');
@@ -56,16 +58,17 @@ program.command('server')
     });
 
 // 项目构建
-program.command('build')
+program.command('build [type]')
     .description('本地构建')
-    .action(function() {
-      require('../lib/fis3.js').build();
+    .option('-d, --destination [destination]', '查看构建后文件结构，分为local和online')
+    .action(function(type, options) {
+      require('../lib/fis3.js').build(type, options.destination, false);
     });
 
 // 代码合并前审查
-program.command('push')
+program.command('push [name]')
     .description('提交代码到Gerrit')
-    .action(function(options) {
+    .action(function(name) {
 
     });
 
