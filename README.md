@@ -46,6 +46,12 @@
 
 ```fat server```
 
+**构建工具输出格式快速查看**
+
+```fat build local -d ./build```(本地模式)
+```fat build online -d ./build```(线上模式)
+
+
 ## 配置文件`fat-config.js`说明
 
 ```javascript
