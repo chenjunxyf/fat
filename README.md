@@ -9,6 +9,7 @@
 * commander
 * 定制化的fis3：[fis3-wrapper-common](https://github.com/guananddu/fis3-wrapper-common)
 * django模板渲染包：[django模板渲染工具包](https://github.com/yanni4night/django)
+* riot工具包：[riot框架](https://github.com/riot/riot)
 
 ## 功能
 
