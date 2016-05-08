@@ -99,6 +99,7 @@ moudle.exports = {
 * js、css静态资源可不一定走static目录
 * 添加自动启动配置的监听子进程
 * 添加riot编程模式example
+* 修改mock数据文件为.tpl.js文件，更方便操作
 
 
 
