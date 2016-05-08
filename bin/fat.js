@@ -44,6 +44,11 @@ program.command('server')
         require('../lib/fis3.js').build('local', './build', true);
       }
 
+      // 启动监听服务
+      if (config.workers) {
+        util.executeWorkers(config.workers); 
+      }
+
       require('../lib/server.js').start();
 
       setTimeout(function() {

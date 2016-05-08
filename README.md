@@ -32,6 +32,11 @@
 
 ```easy_install "Django==1.7"```
 
+**启用riot编程模式，需要安装riot**
+
+```npm install riot -g```
+
+
 ## 使用
 
 **查看帮助**
@@ -67,11 +72,13 @@ moudle.exports = {
             name: '推荐页',
             rule: /\/ttdiscuss\/v1\/brow\/feed\//,  // 线上请求路径
             target: '/page/index/recommend.html'    // 本地模板路径
-        },
+        }
+    ],
+    workers: [   // 自启监听子进程
         {
-            name: '关注页',
-            rule: /\/ttdiscuss\/v1\/brow\/find\//,
-            target: '/page/index/surround.html'   
+            on: true,  // 是否开启
+            command: 'riot',   // 命令
+            args: ['-w', 'tags', 'tags']  // 参数
         }
     ]
 }
@@ -85,6 +92,14 @@ moudle.exports = {
 * 构建输出格式（线上+线下）
 * 启动浏览器的时机
 * 控制查看构建工具的输出，以便排错
+
+### 2016-5-8
+
+* js、css静态资源可不一定走static目录
+* 添加自动启动配置的监听子进程
+* 添加riot编程模式example
+
+
 
 
 

@@ -9,11 +9,13 @@ moudle.exports = {
             name: '推荐页',
             rule: /\/ttdiscuss\/v1\/brow\/feed\//,
             target: '/page/index/recommend.html'
-        },
+        }    
+    ],
+    workers: [
         {
-            name: '关注页',
-            rule: /\/ttdiscuss\/v1\/brow\/find\//,
-            target: '/page/index/surround.html'   
+            on: true,
+            command: 'riot',
+            args: ['-w', 'tags', 'tags']
         }
     ]
 }
