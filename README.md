@@ -101,6 +101,11 @@ moudle.exports = {
 * 添加riot编程模式example
 * 修改mock数据文件为.tpl.js文件，更方便操作
 
+### 2016-5-18
+
+* 修复mock数据缓存
+
+
 
 
 
